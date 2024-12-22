@@ -35,7 +35,7 @@ keyInput.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 keyInput.Parent = frame
 
 -- Kopyalanacak site linki
-local siteLink = "https://ay.link/CpYouu" -- Buraya istediğiniz linki yazın
+local siteLink = "https://pnd.link/VQtRe" -- Buraya istediğiniz linki yazın
 
 -- Get Key butonuna basıldığında site linkini kopyala
 getKeyButton.MouseButton1Click:Connect(function()
