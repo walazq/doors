@@ -7,7 +7,7 @@ frame.Position = UDim2.new(0.5, -150, 0.5, -100)
 frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 frame.Parent = screenGui
 
--- Get Key butonu
+-- Get Key button
 local getKeyButton = Instance.new("TextButton")
 getKeyButton.Size = UDim2.new(0, 250, 0, 50)
 getKeyButton.Position = UDim2.new(0.5, -125, 0.5, -60)
@@ -16,7 +16,7 @@ getKeyButton.TextSize = 20
 getKeyButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 getKeyButton.Parent = frame
 
--- Check Key butonu
+-- Check Key button
 local checkKeyButton = Instance.new("TextButton")
 checkKeyButton.Size = UDim2.new(0, 250, 0, 50)
 checkKeyButton.Position = UDim2.new(0.5, -125, 0.5, 30)
@@ -25,7 +25,7 @@ checkKeyButton.TextSize = 20
 checkKeyButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 checkKeyButton.Parent = frame
 
--- Key giriş kutusu
+-- Key input box
 local keyInput = Instance.new("TextBox")
 keyInput.Size = UDim2.new(0, 250, 0, 50)
 keyInput.Position = UDim2.new(0.5, -125, 0.5, -130)
@@ -34,34 +34,34 @@ keyInput.TextSize = 20
 keyInput.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 keyInput.Parent = frame
 
--- Kopyalanacak site linki
-local siteLink = "https://pnd.link/VQtRe" -- Buraya istediğiniz linki yazın
+-- Link to be copied
+local siteLink = "https://pnd.link/VQtRe" -- Put your desired link here
 
--- Get Key butonuna basıldığında site linkini kopyala
+-- When the Get Key button is clicked, copy the link to clipboard
 getKeyButton.MouseButton1Click:Connect(function()
-    setclipboard(siteLink) -- Linki panoya kopyalar
-    print("Site linki panoya kopyalandı: " .. siteLink)
+    setclipboard(siteLink) -- Copy the link to the clipboard
+    print("Site link copied to clipboard: " .. siteLink)
 end)
 
--- Check Key butonuna tıklandığında kontrol işlemi
+-- When the Check Key button is clicked, perform validation
 checkKeyButton.MouseButton1Click:Connect(function()
     if keyInput.Text == "GHATYSQ" then
-        print("Key doğru, script çalıştırılıyor ve ekran kapatılıyor...")
+        print("Key is correct, script is being executed and screen is closing...")
         
-        -- Loadstring komutunu çalıştır
+        -- Execute the script using loadstring
         local success, errorMessage = pcall(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub"))()
         end)
 
         if success then
-            print("Script başarıyla çalıştırıldı!")
+            print("Script successfully executed!")
         else
-            warn("Script çalıştırılamadı: " .. errorMessage)
+            warn("Failed to execute the script: " .. errorMessage)
         end
 
-        -- GUI'yi kapat
+        -- Close the GUI
         screenGui:Destroy()
     else
-        print("Key yanlış!")
+        print("Incorrect key!")
     end
 end)
