@@ -35,7 +35,7 @@ keyInput.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 keyInput.Parent = frame
 
 -- Kopyalanacak site linki
-local siteLink = "https://www.orneklink.com" -- Buraya istediğiniz linki yazın
+local siteLink = "https://ay.link/CpYouu" -- Buraya istediğiniz linki yazın
 
 -- Get Key butonuna basıldığında site linkini kopyala
 getKeyButton.MouseButton1Click:Connect(function()
@@ -45,7 +45,7 @@ end)
 
 -- Check Key butonuna tıklandığında kontrol işlemi
 checkKeyButton.MouseButton1Click:Connect(function()
-    if keyInput.Text == "WALCODE" then
+    if keyInput.Text == "GHATYSQ" then
         print("Key doğru, script çalıştırılıyor ve ekran kapatılıyor...")
         
         -- Loadstring komutunu çalıştır
