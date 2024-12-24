@@ -39,18 +39,20 @@ local siteLink = "https://pnd.link/Rooms" -- Put your desired link here
 
 -- When the Get Key button is clicked, copy the link to clipboard
 getKeyButton.MouseButton1Click:Connect(function()
-    setclipboard(siteLink) -- Copy the link to the clipboard
-    print("Site link copied to clipboard: " .. siteLink)
+    pcall(function()
+        setclipboard(siteLink) -- Copy the link to the clipboard
+        print("Site link copied to clipboard: " .. siteLink)
+    end)
 end)
 
 -- When the Check Key button is clicked, perform validation
 checkKeyButton.MouseButton1Click:Connect(function()
     if keyInput.Text == "RAKJVS" then
         print("Key is correct, script is being executed and screen is closing...")
-        
+
         -- Execute the script using loadstring
         local success, errorMessage = pcall(function()
-            loadstring(game:HttpGet("loadstring(game:HttpGet("https://raw.githubusercontent.com/DaRealGeo/roblox/master/rooms-autowalk",true))();"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/DaRealGeo/roblox/master/rooms-autowalk", true))()
         end)
 
         if success then
